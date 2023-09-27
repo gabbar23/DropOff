@@ -1,7 +1,5 @@
 package com.DropOff.app.config;
 
-import com.DropOff.app.socket_handlers.ChatSocketHandler;
-import com.DropOff.app.socket_handlers.NotificationSocketHandler;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -11,6 +9,9 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistra
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
+
+import com.DropOff.app.utility.DropOff_Sockets.InboxChatSocket;
+import com.DropOff.app.utility.DropOff_Sockets.NotificationSocketHandler;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -76,7 +77,7 @@ public class WebSocketConfigTest {
     @Test
     public void testChatHandlerBean() {
         WebSocketConfig webSocketConfig = new WebSocketConfig();
-        ChatSocketHandler chatHandler = webSocketConfig.chatHandler();
+        InboxChatSocket chatHandler = webSocketConfig.chatHandler();
 
         // Assert that the chatHandler bean is not null
         assertNotNull(chatHandler);

@@ -13,7 +13,7 @@
 	<artifactId>DropOff</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DropOff</name>
-	<description>DropOff-Ride sharing</description>
+	<description>DropOff Courier Delivery services</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

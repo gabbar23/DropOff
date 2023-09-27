@@ -9,7 +9,7 @@ public class MyUtils {
     /**
      * Get unique id form session
      *
-     * @author Rahul Saliya
+     * 
      * @param session session
      * @return unique id
      */

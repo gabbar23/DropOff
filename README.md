@@ -1,11 +1,12 @@
 # DropOff
 
-DropOff is a web app for package delivery services that allows users to send packages from anywhere to anywhere and track their delivery in real-time. DropOff is a reliable and efficient solution for anyone who needs to send a package and wants to ensure that it arrives safely and on time.
+DropOff is a web application designed to streamline courier delivery services, enabling users to dispatch couriers from any location to any destination while tracking their delivery in real time. It stands as a dependable and effective solution for individuals seeking to send couriers, ensuring safe and timely arrivals.
 
 ## Getting Started
 
 ### Prerequisites
-Before installing the DropOff web app, ensure that you have the following tools installed:
+
+Before initiating the installation of the DropOff web app, ensure the availability of the following tools:
 
 - Java Development Kit (JDK) version 11 or higher
 - Apache Maven build tool version 3.6 or higher
@@ -13,87 +14,75 @@ Before installing the DropOff web app, ensure that you have the following tools 
 
 ### Installation
 
-To install the DropOff web app, follow these steps:
+To install the DropOff web app, adhere to these steps:
 
 - Clone the DropOff app repository from GitHub
 
 #### Back-end Installation
 
-- Set up the MySQL database by creating a new database and a user with privileges to access it. You can use a tool like phpMyAdmin or the MySQL command line tool to do this.
+- Establish the MySQL database by developing a new database and a user with access privileges. Tools like phpMyAdmin or the MySQL command line tool are suitable for this purpose.
 
-- Configure the DropOff app to use the MySQL database by editing the application.properties file located in the src/main/resources directory. Replace the placeholders <database-name>, <username>, and <password> with your database name, username, and password respectively:
+- Adapt the DropOff app to utilize the MySQL database by modifying the application.properties file located in the src/main/resources directory. Substitute the placeholders <database-name>, <username>, and <password> with your respective database name, username, and password:
 
-
-- Build the DropOff app using Maven by running the following command in your terminal or command prompt from the root directory of the project:
+- Construct the DropOff app using Maven by executing the following command in the root directory of the project:
 
         mvn clean package
 
-This will generate a JAR file in the target directory.
+This command will produce a JAR file in the target directory.
 
 #### Front-end Installation
 
-- Navigate to the project folder.
+- Navigate to the project directory.
 
 - Install Dependencies:
 
         npm install
 
-- To run the app locally, use the following command:
+- To operate the app locally, execute the following command:
 
         npm start
 
-- This will start the development server, and you can view your app locally on your browser at http://localhost:3000.
+- The development server will commence, and the app can be accessed locally at http://localhost:3000.
 
-- To build the app for production, use the following command:
+- For production build, execute:
 
         npm run build
 
 ### Deployment
 
-To deploy the DropOff web app on a server, follow these steps:
+To deploy the DropOff web app on a server, perform the following:
 
-- Ensure that the server has JDK/JRE version 11 or higher installed.
+- Ensure the server is equipped with JDK/JRE version 11 or higher.
 
-- Transfer the JAR file generated in the previous step to the web server. If you are using Linux or MacOS, you can transfer the file to the server using the scp command. After entering the command, it will ask for credentials for the user you are using to connect to the web server. Here, csci5308vm9 is the username and csci5308vm9.research.cs.dal.ca is the host_url, and backend/ is the path where we want to transfer the file:
+- Transfer the JAR file, generated previously, to the web server. For Linux or MacOS, use the scp command, entering credentials when prompted:
 
-        scp ./target/DropOff.jar csci5308vm9@csci5308vm9.research.cs.dal.ca:backend/
+        scp ./target/DropOff.jar username@host_url:path/
 
-- Run the DropOff app on the server using the ssh command. Here, csci5308vm9 is the username, csci5308vm9.research.cs.dal.ca is the host_url, and java -jar ~/backend/DropOff.jar is the command to run the application on the server:
+- Activate the DropOff app on the server using the ssh command:
 
-- After running these commands successfully, you can check the running application by going to: http://csci5308vm9.research.cs.dal.ca:8080. Here, replace csci5308vm9.research.cs.dal.ca with your server's URL.
+        ssh username@host_url "java -jar ~/path/DropOff.jar"
 
-Note: You may need to configure your server's firewall to allow incoming connections to port 8080 if necessary.
+- Verify the running application by navigating to: http://host_url:8080.
+
+Note: Adjustments to your server's firewall may be required to allow incoming connections on port 8080.
 
 ## Features
 
-- Driver Verification while registration
-
-- Search Dashboard (List view and Map View)
-
-- Booking a ride with a user (Accepted Ride)
-
-- Negotiation for a price (using chat-bot)
-
-- Starting a ride (with otp)
-
-- Ending a ride (with otp)
-
-- Paying for a ride and getting a receipt
-
-- Canceling the ride and Refund
-
-- Tracking the ongoing Ride
-
-- Giving Feedback to the driver
-
-- Raising an issue once the ride is completed
+- User Authentication
+- Home Page / Dashboard / Filters
+- Scheduling a DropOff with a user (Confirmed Delivery)
+- Payment Module
+- Inbox Chat (via chat-bot)
+- Initiating and Concluding a delivery (with OTP)
+- Feedback and Ratings
+- Contact Admin for Raising issues.
 
 ### References
 
-- [Online image hosting service](https://postimages.org/)
+- [Online Image Hosting Service](https://postimages.org/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [GeeksForGeeks](https://www.geeksforgeeks.org/)
-- [CSS and Styles](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [ReactJS](https://blog.logrocket.com/why-react-doesnt-update-state-immediately/)
 - [API Testing](https://www.guru99.com/postman-tutorial.html)
 - [Testing](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)

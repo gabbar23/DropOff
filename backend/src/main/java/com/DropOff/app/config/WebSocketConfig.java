@@ -1,7 +1,5 @@
 package com.DropOff.app.config;
 
-import com.DropOff.app.socket_handlers.ChatSocketHandler;
-import com.DropOff.app.socket_handlers.NotificationSocketHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -9,6 +7,9 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
+
+import com.DropOff.app.utility.DropOff_Sockets.InboxChatSocket;
+import com.DropOff.app.utility.DropOff_Sockets.NotificationSocketHandler;
 
 /*
  * Reference: https://spring.io/guides/gs/messaging-stomp-websocket/
@@ -23,12 +24,10 @@ public class WebSocketConfig implements WebSocketConfigurer {
     /**
      * To configure the web socket handlers.
      *
-     * @author Rahul Saliya
-     * @param registry WebSocketHandlerRegistry
      */
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(ChatSocketHandler.getInstance(), "/chatSocket/{userId}")
+        registry.addHandler(InboxChatSocket.getInstance(), "/chatSocket/{userId}")
                 .addHandler(NotificationSocketHandler.getInstance(), "/notificationSocket/{userId}")
                 .setAllowedOrigins("*")
                 .addInterceptors(new HttpSessionHandshakeInterceptor())
@@ -37,20 +36,15 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     /**
      * To create a bean of ChatSocketHandler.
-     *
-     * @author Rahul Saliya
-     * @return ChatSocketHandler
+
      */
     @Bean
-    public ChatSocketHandler chatHandler() {
-        return ChatSocketHandler.getInstance();
+    public InboxChatSocket chatHandler() {
+        return InboxChatSocket.getInstance();
     }
 
     /**
      * To create a bean of NotificationSocketHandler.
-     *
-     * @author Rahul Saliya
-     * @return NotificationSocketHandler
      */
     @Bean
     public NotificationSocketHandler notificationHandler() {

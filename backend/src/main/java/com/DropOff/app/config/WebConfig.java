@@ -12,8 +12,6 @@ public class WebConfig implements WebMvcConfigurer {
     /**
      * To allow cross origin requests from any origin, any header and any method.
      *
-     * @author Rahul Saliya
-     * @param registry CorsRegistry
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
